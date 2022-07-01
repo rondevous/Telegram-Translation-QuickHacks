@@ -20,6 +20,9 @@ skipped = list()
 # RegExps
 req_quotes = re.compile(r"\\'.*\\'.*HH:mm")  # \'Sample Text\' HH:mm
 
+# use re.finditer instead of re.findall for this, since a capturing group is present
+TOKENS = re.compile(r'%(\d+\$)?\.?\d*[%@sdf]|\{[A-Za-z0-9_]+\}|\bun\d\b')
+
 # TDesktop Markup tokens, needing to enclose one or more text entities
 TokensExtraTDesktop = re.compile(r'\[a href=\".*\"\]|\[\/?[A-Za-z]\]')
 
@@ -74,13 +77,34 @@ def XMLreplace(file=str, folder=None):
 	for string in root.findall('string'):
 		string_name = string.get('name')
 		# string.text = ""+ str(rd.random())
+		# convert string.text to str() before applying any re ops on it, or there will be type errors when passing None.
+		# blame AllNPhotos_one for this
 		if TokensExtraAndroid.search(str(string.text)) != None:
 			tokensExtra = TokensExtraAndroid.findall(string.text)
 			extralen = len(tokensExtra) # these are pairs, so always even number
 			newstring = ""
 			for x in range(0, int(extralen/2)):
 				newstring += tokensExtra.pop(0) + str(rd.random()) + tokensExtra.pop(0) + ' '
+				if TOKENS.search(str(string.text)) != None:
+				string.text = unescape(string.text)
+				for tok in TOKENS.finditer(string.text):
+					newstring += ' '+tok[0]
 			string.text = escape(newstring)
+		elif TOKENS.search(str(string.text)) != None:
+			if(req_quotes.match(str(string.text)) != None):  # strings that require "quotes"
+				quotes = True
+			else:
+				quotes = False
+			temp = str(rd.random())
+			string.text = unescape(string.text)
+			for tok in TOKENS.finditer(str(string.text)):
+				temp += ' '+tok[0]
+			string.text = temp
+			string.text = escape(string.text)
+			if quotes:
+				string.text = req_quotes.sub(
+					("\\'{}\\'").format(string_name), str(string.text))
+			del temp
 		elif(req_quotes.match(str(string.text)) != None):  # strings that require "quotes"
 			string.text = req_quotes.sub(
 				("\\'{}\\'").format(str(rd.random())), str(string.text))
@@ -161,8 +185,18 @@ def STRINGSreplace(file=str, folder=None):
 			newtxt = ""
 			for x in range(0, int(extralen/2)):
 				newtxt += tokensExtra.pop(0) + str(rd.random()) + tokensExtra.pop(0) + ' '
+				if TOKENS.search(strText) != None:
+				for tok in TOKENS.finditer(strText):
+					newtxt += ' '+tok[0]
 			strText = escape(newtxt)
 			new_strings.write("\""+strName+"\" = \""+strText+"\";\n")
+		elif TOKENS.search(strText) != None:
+			temp = str(rd.random())
+			for tok in TOKENS.finditer(strText):
+				temp += ' '+tok[0]
+			strText = temp
+			new_strings.write("\""+strName+"\" = \""+strText+"\";\n")
+			del temp
 		else:
 			new_strings.write("\""+strName+"\" = \""+str(rd.random())+"\";\n")
 		if(args.p):
