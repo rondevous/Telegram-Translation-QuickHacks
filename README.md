@@ -1,14 +1,14 @@
 # This is a list of Quick Hacks for use on the Telegram Translation website
-Mostly part of ideas that haven't been implemented properly.
+Some are part of ideas that haven't been implemented properly.
 
 |No.|QuickHack                                |Description
 |--|-------------------------------------|---------------------------------------|
-|1.|[Parsing Critical Strings.md](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/Parsing%20Critical%20Strings.md)        |**[web]** Generate list of critical strings|
-|2.|[How-to-detect-tokens.md](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/How-to-detect-tokens.md)            |**[web]** RegExp to find tokens            |
-|3.|[tg-gibberish-translation-generator.md](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-gibberish-translation-generator.md)|**[python3]** Generate random value language files|
-|4.|[String Names (& Tokens) Generator](https://github.com/rondevous/stringnames)|**[python3]** Generrate language files with string-names as the translation|
-|5.|[Keyboard Shortcuts for TG Translations Platform](https://github.com/jurf/telegram-translation-shortcuts)|**[web]** Keyboard Shortcuts userscript to enable a smoother translation experience|
-|6.|[Telegram Translation Extras](https://github.com/rondevous/telegram-translation-extras)|**[web]** Userscript to enable extra features, an extention of keyboard shortcuts script|
-|7.|[AutoHotKey script](https://github.com/SvenErikLarsen/AHK-Telegram-Translation)|**[Windows]** AHK script for ease of use on the Telegram translation platform |
-|8.|
-
+|1.|[AutoHotKey script for TG Apps Translation website](https://github.com/SvenErikLarsen/AHK-Telegram-Translation)|**[Windows]** AHK script for ease of use on the Telegram translation platform |
+|2.|[Keyboard Shortcuts for TG Apps Translation website](https://github.com/jurf/telegram-translation-shortcuts)|**[web]** Keyboard Shortcuts userscript to enable a smoother translation experience|
+|3.|[Extra tools/info for TG Apps Translation website](https://github.com/rondevous/telegram-translation-extras)|**[web]** Userscript to enable extra features, as an extention of keyboard shortcuts script|
+|4.|[String Names (& Tokens) Generator](https://github.com/rondevous/stringnames)|**[python3]** Generate language files with string-names as the translation|
+|5.|[Gibberish/random value translation generator](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-gibberish-translation-generator.md)|**[python3]** Generate random value language files|
+|6.|[Detecting tokens in translation strings (for programmers)](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/How-to-detect-tokens.md)            |**[Regex]** Regular Expression to find tokens            |
+|7.|[How to get list of Critical Strings](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/Parsing%20Critical%20Strings.md)        |**[web]** Semi-Automatic instructions on how to generate list of critical strings|
+|8.|[Other useful tools and information](https://t.me/translationtools/5)|**[Telegram Group]** Pinned message in the Translation Tools group|
+|9.|
