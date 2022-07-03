@@ -8,7 +8,8 @@ Some are part of ideas that haven't been implemented properly.
 |3.|[Extra tools/info for TG Apps Translation website](https://github.com/rondevous/telegram-translation-extras)|**[web]** Userscript to enable extra features, as an extention of keyboard shortcuts script|
 |4.|[String Names (& Tokens) Generator](https://github.com/rondevous/stringnames)|**[python3]** Generate language files with string-names as the translation|
 |5.|[Gibberish/random value translation generator](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-gibberish-translation-generator.md)|**[python3]** Generate random value language files|
-|6.|[Detecting tokens in translation strings (for programmers)](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/How-to-detect-tokens.md)            |**[Regex]** Regular Expression to find tokens            |
-|7.|[How to get list of Critical Strings](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/Parsing%20Critical%20Strings.md)        |**[web]** Semi-Automatic instructions on how to generate list of critical strings|
-|8.|[Other useful tools and information](https://t.me/translationtools/5)|**[Telegram Group]** Pinned message in the Translation Tools group|
-|9.|
+|6.|[Detecting tokens in translation strings (programming)](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/How-to-detect-tokens.md)            |**[Regex]** Regular Expression to find tokens            |
+|7.|[Getting a list of Critical Phrases](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/Parsing%20Critical%20Strings.md)        |**[web]** Semi-Automatic instructions on how to generate list of critical strings|
+|8.|[Telegram languages translation progress](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-lang-stats.md)|**[web]** Get a CSV of app translation percentages given a list of languages|
+|9.|[Other useful tools and information](https://t.me/translationtools/5)|**[Telegram Group]** Pinned message in the Translation Tools group|
+|10.| Want to add another quick hack?| Edit this README.md and open a pull request :smiling_face:|
