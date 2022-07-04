@@ -1,3 +1,5 @@
+**Note: This method is not perfect, there are missing critical strings at the end as reported by SEBEK here https://t.me/translationtools/1411**
+
 # Critical strings/keys on the Telegram Translations platform
 These type of strings are only translatable by official translators/coordinators of Telegram Translation.
 When a language is complete except for critical strings, and an official translator has been appointed after most of the strings are done, finding only the critical strings is a difficult task. So this here is an attempt to document in some form all critical strings, so that they can be easily found and translated by the new official coordinators.

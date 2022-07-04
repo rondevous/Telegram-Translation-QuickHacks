@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Fetch Languages Progress
-// @namespace    https://github.com/rondevous/Telegram-Translation-QuickHacks/tg-lang-stats.user.js
+// @namespace    https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-lang-stats.user.js
 // @description  Parse languages and download a CSV file containing the percentages of translated phrases per app per language.
 // @author       Rondevous
 // @include      https://translations.telegram.org/*
@@ -9,8 +9,8 @@
 // @grant        GM_getValue
 // @run-at       document-end
 // @require      https://github.com/evanplaice/jquery-csv/raw/main/src/jquery.csv.js
-// @downloadURL  https://github.com/rondevous/Telegram-Translation-QuickHacks/tg-lang-stats.user.js
-// @updateURL    https://github.com/rondevous/Telegram-Translation-QuickHacks/tg-lang-stats.user.js
+// @downloadURL  https://github.com/rondevous/Telegram-Translation-QuickHacks/raw/main/tg-lang-stats.user.js
+// @updateURL    https://github.com/rondevous/Telegram-Translation-QuickHacks/raw/main/tg-lang-stats.user.js
 // ==/UserScript==
 
 /* Global GM_getValue, GM_setValue*/

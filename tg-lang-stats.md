@@ -21,6 +21,8 @@ let tglangs = {
 ```
 Go ahead and edit that `let tglangs` variable in the script. Don't forget to copy paste the script into violent monkey extention if you haven't already. That's all!
 
+![reset and fetch](https://user-images.githubusercontent.com/67483423/177086747-87d774dc-b4c0-4a0b-b25c-55a4d9dabafd.png)
+
 ## How to use?
 1. Install [Violentmonkey](https://violentmonkey.github.io/get-it/), or a similar browser extension
 2. Install the userscript: **[tg-lang-stats.user.js](https://github.com/rondevous/Telegram-Translation-QuickHacks/raw/main/tg-lang-stats.user.js)**
