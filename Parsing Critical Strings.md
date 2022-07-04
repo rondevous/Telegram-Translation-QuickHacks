@@ -1,4 +1,4 @@
-**Note: This method is not perfect, there are missing critical strings at the end as reported by SEBEK here https://t.me/translationtools/1411**
+**Note: This method may not be perfect. https://t.me/translationtools/1411**
 
 # Critical strings/keys on the Telegram Translations platform
 These type of strings are only translatable by official translators/coordinators of Telegram Translation.

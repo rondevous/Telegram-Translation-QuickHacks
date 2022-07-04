@@ -86,10 +86,10 @@ def XMLreplace(file=str, folder=None):
 			for x in range(0, int(extralen/2)):
 				newstring += tokensExtra.pop(0) + str(rd.random()) + tokensExtra.pop(0) + ' '
 				if TOKENS.search(str(string.text)) != None:
-				string.text = unescape(string.text)
-				for tok in TOKENS.finditer(string.text):
-					newstring += ' '+tok[0]
-			string.text = escape(newstring)
+					string.text = unescape(string.text)
+					for tok in TOKENS.finditer(string.text):
+						newstring += ' '+tok[0]
+				string.text = escape(newstring)
 		elif TOKENS.search(str(string.text)) != None:
 			if(req_quotes.match(str(string.text)) != None):  # strings that require "quotes"
 				quotes = True
@@ -186,9 +186,9 @@ def STRINGSreplace(file=str, folder=None):
 			for x in range(0, int(extralen/2)):
 				newtxt += tokensExtra.pop(0) + str(rd.random()) + tokensExtra.pop(0) + ' '
 				if TOKENS.search(strText) != None:
-				for tok in TOKENS.finditer(strText):
-					newtxt += ' '+tok[0]
-			strText = escape(newtxt)
+					for tok in TOKENS.finditer(strText):
+						newtxt += ' '+tok[0]
+				strText = escape(newtxt)
 			new_strings.write("\""+strName+"\" = \""+strText+"\";\n")
 		elif TOKENS.search(strText) != None:
 			temp = str(rd.random())
