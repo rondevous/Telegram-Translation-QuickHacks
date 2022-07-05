@@ -11,5 +11,9 @@ Some are part of ideas that haven't been implemented properly.
 |6.|[Detecting tokens in translation strings (programming)](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/How-to-detect-tokens.md)            |**[Regex]** Regular Expression to find tokens            |
 |7.|[Getting a list of Critical Phrases (not perfect)](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/Parsing%20Critical%20Strings.md)        |**[web]** Semi-Automatic instructions on how to generate list of critical strings|
 |8.|[Telegram languages translation progress](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/tg-lang-stats.md)|**[web]** Get a CSV of app translation percentages given a list of languages|
-|9.|[Other useful tools and information](https://t.me/translationtools/5)|**[Telegram Group]** Pinned message in the Translation Tools group|
-|10.| Want to add another quick hack?| Edit this README.md and open a pull request :smile:|
+|9.|[Mark as Translated](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/mark-as-translated.md)|**[web]** In untranslated section, mark previously applied strings as translated|
+|10.|[Other useful tools and information](https://t.me/translationtools/5)|**[Telegram Group]** Pinned message in the Translation Tools group|
+|11.| Want to add another quick hack?| Edit this README.md and open a pull request :smile:|
+
+## Want to add another hack?
+Send your suggestion to [Translation Tools](https://t.me/translationtools) Telegram group.
