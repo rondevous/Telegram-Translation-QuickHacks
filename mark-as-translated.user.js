@@ -97,7 +97,6 @@ function listenMutationTrKeys () {
             setTimeout(function(){
               markRead()
             }, getRndInteger(1,3) * 1000)
-            
           }
           break;
         // blue dot hidden: "tr-value-untranslated ohide"

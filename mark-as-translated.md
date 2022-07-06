@@ -1,3 +1,5 @@
+**Note:** Do not use this script, it does nothing special
+---
 # Mark previously translated strings as translated (removes blue dot)
 This script will help you get rid of untranslated strings which you have already translated, but appear in the untranslated section because of changes to the string in the base language.
 
