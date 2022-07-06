@@ -7,25 +7,25 @@ Because the Telegram Translations Platform doesn't seem to allow importing more 
 3. This hack is intended for stringnames language pack, and the like.
 
 ## Possible solutions
-**Solution 1:** Hack the edit-selected-phrases button to send automatically 50 strings in a batch, with a delay of 5-10s
-**Solution 2:** Produce string files of 50 strings. E.g. for android it will be ~77 files to upload each time
+- **Solution 1:** Hack the edit-selected-phrases button to send automatically 50 strings in a batch, with a delay of 5-10s
+- **Solution 2:** Produce string files of 50 strings. E.g. for android it will be ~77 files to upload each time
  
 ## Working Solutions:
 - Similar to solution 1, but you have to paste this in the browser console (<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>i</kbd>) once after uploading the file you want to import.
 ```javascript
 var $rows = $('.tr-change-keys-block .tr-plain-key-row');
 var shards = []
-for(var i =0, j=50; j< $rows.length; i+=50, j+=50) {
+for(var i =0, j=50; i< $rows.length; i+=50, j+=50) {
   shards.push($rows.slice(i,j))
 }
-var counter = 0;
-var i = setInterval(function(){
+var counter = shards.length-1;
+var autouploadkeys = setInterval(function(){
     // do your thing
-    var grouped_rows = LangKeys.groupKeyRows(shards[counter])
-    ImportKeys.affectRows('editImportedKeys', grouped_rows)
-    counter++;
-    if(counter === shards.length-1) {
-        clearInterval(i);
+    var grouped_rows = LangKeys.groupKeyRows(shards[counter]);
+    ImportKeys.affectRows('editImportedKeys', grouped_rows);
+    counter--;
+    if(counter === 0) {
+        clearInterval(autouploadkeys);
     }
 }, 8*1000); // 8 secs between uploads
 ```
