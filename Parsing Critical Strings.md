@@ -1,4 +1,4 @@
-**Note: This method may not be perfect. https://t.me/translationtools/1411**
+**Note: This method varies from the [previous method](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/a31d1a1f74ec33e7885bbac03674b60e5273a948/Parsing%20Critical%20Strings.md) of removing criticals and reuploading the file for import**
 
 # Critical strings/keys on the Telegram Translations platform
 These type of strings are only translatable by official translators/coordinators of Telegram Translation.
@@ -6,13 +6,16 @@ When a language is complete except for critical strings, and an official transla
 
 # How to update Critical Strings of ['Extras'](https://github.com/rondevous/telegram-translation-extras) Script
 
-### A) Reset Critical strings list to in-script ones because you messed up with script values
-If you just want to reset the critical strings, because you fiddled with the values of the script in Violent Monkey extention:
-1. Delete any of critical_app values completely. 
+### A) Reset Critical strings list to in-script ones
+If you just want to reset the critical strings, maybe because you _tinkered_ with the values of the script in ViolentMonkey extention or because you received _an update_ to the script:
+
+![007_sel](https://user-images.githubusercontent.com/67483423/177706693-87e2dac2-1f88-4eb2-a0af-700121a5d70a.png)
+
+1. In the ViolentMonkey script editor, go to **'Values'** tab, and delete all of the critical_app values completely.
 2. Open https://translations.telegram.org
 3. Click the search help icon (?) -> Extra Tools -> Open Criticals
 
-This should reset the critical strings back to what the script had.
+This should reset the critical strings to what the script has.
 
 ### B) Parsing new critical strings by importing random values in a test/dustbin language pack (For updating criticals in 'extras' script)
 
@@ -24,48 +27,13 @@ This should reset the critical strings back to what the script had.
 
 4. On the import page, some keys/strings won't get imported even if you press 'import all'. **Those are the critical strings.** You will have to finish importing all the critical strings to get a complete list of these unimportable ones. _(Note: If you are an official translator, these might get imported. So use a non-official telegram account to do this.)_
 
-5. Using the shortcuts userscript, CTRL+A to select 50 phrases at once and import/edit them right away. _("50 at a time" seems to be the limit when "edit selected" or when sending the selected strings to the server)_
+5. Use the [auto-import](https://github.com/rondevous/Telegram-Translation-QuickHacks/blob/main/auto-import-hack.md) hack if there are problems with the import page.
 
-6. When there are ~30 strings that aren't getting imported (they remain selected & don't go away after pressing "edit selected"), STOP. Let me make this easy for you:
+6. Press EDIT-ALL to confirm there aren't any phrases left. Try going through the leftover phrases and guess if something should not be a critical. select such strings and import them. 
 
-7. Keeping the selected ones as they are (the ones that don't get imported), open the browser console (<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>i</kbd>) and run the following javascript code:
-```javascript
-var path = window.location.pathname
-var app = /\/[A-Za-z0-9_\-]+\/(tdesktop|ios|macos|android|android_x)/.exec(path)[1]
-var stringsArray = document.getElementsByClassName('tr-plain-key-row selected')
-if (app === "ios"|| app === "tdesktop"|| app === "macos") {
-  var textregex = ""
-  let orsep = "|" 
-  for (let i = 0; i < (stringsArray.length); i++) {
-    let phrase = stringsArray.item(i).attributes.item(1).value
-    if(i == stringsArray.length - 1) { 
-      orsep = ''
-    }
-    textregex += '"'+phrase+'" = ".*";\n' + orsep
-  }
-} else if (app === "android" || app === "android_x") {
-  var textregex = ""
-  let orsep = "|"
-  for (let i = 0; i < (stringsArray.length); i++) {
-    phrase = stringsArray.item(i).attributes.item(1).value
-    if(i == stringsArray.length-1) {
-      orsep = ''
-    }
-    textregex += ""+'<string name="'+phrase+'">.*</string>\n'+orsep
-  }
-  console.log("Copy below message & replace critical strings of "+ app)
-  console.log(textregex);
-  textregex
-}
-```
-8. You will get an output in the console. Copy it. Make sure you do not copy 'debugger eval code ..."
-9. **Make a copy of your random/gibberish language files**, and open the file of the app you're importing into an editor like Notepad++. Open find-replace with CTRL+H. TURN ON [.*] REGEX (Regular Expression) MODE in the find-replace window. Paste the output from the above script - and again, make sure there is no extra text at the end like "debugger eval code". Keep the 'replace with' text field blank, and press replace all. **This should remove the found critical strings from your language file.** Make sure you have a copy of the language file containing ALL the strings with the same values.
+9. **Make a copy of your random/gibberish language files for re-verification.** Try re-uploading the same file, press edit-all again just to be sure they all are critical strings.
 
-10. Import the removed-criticals file. You won't see the same ~30 strings from before. **CONTINUE IMPORTING FROM THIS FILE.** Redo steps 6-10 until all the strings are imported.
-
-11. Now, import the not-removed-criticals version of the random/gibberish language file. You will see all the critical strings. You are one step away from getting that "critical_app" json for updating the script.
-
-12. Open the browser console (<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>i</kbd>) and run the following javascript code on this import page to get all the strings in **JSON format**
+10. Open the browser console (<kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>i</kbd>) and run this javascript code on this import page to get all the strings in **JSON format**
 ```javascript
 // Run this on import page in your browser console, after importing translations of all strings
 // RIGHT CLICK ON OUTPUT -> COPY OBJECT
@@ -108,8 +76,8 @@ textcor
 
 ![html output](https://user-images.githubusercontent.com/67483423/177001223-01a6b93a-6e99-43aa-b8e3-a05888be250b.jpg)
 
-13. From the output, right click -> copy object ("copy message" if using alternate "href" code). Again, remove the extra text like 'debugger eval' from it.
+11. From the output, right click -> copy object ("copy message" if using alternate "href" code). Again, remove the extra text like 'debugger eval' from it.
 
-14. Go to Violent Monkey. Open the 'Telegram-Translation-Extras' script. Click on `</>` edit script. Open the "Values" tab. Click on the app you want to update. Paste in the value you copied from step 13. Save script value.
+12. Go to Violent Monkey. Open the 'Telegram-Translation-Extras' script. Click on `</>` edit script. Open the "Values" tab. Click on the app you want to update. Paste in the value you copied from step 13. Save script value.
 
-15. **(Optional)** you can make this change permanent by directly editing the critical_<i>app</i> variable in the script. After doing it this way, completely delete the critical_android value from script-storage (values tab). Then load translations.telegram.org/en/android -> click the (?) search help -> Extra Tools -> Open Criticals
+13. **(Optional)** you can make this change permanent by directly editing the critical_<i>app</i> variable in the script. After doing it this way, completely delete the critical_android value from script-storage (values tab). Then load translations.telegram.org/en/android -> click the (?) search help -> Extra Tools -> Open Criticals

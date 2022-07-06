@@ -2,9 +2,10 @@
 Because the Telegram Translations Platform doesn't seem to allow importing more than 50 strings without reloading the page.
 
 ## WARNING:
-1. Do not use this trick for actual languages. It is always better to double check when importing a large number of strings. And a limit of 50 strings per import is sensible.
-2. You should also know that [translations.telegram.org](https://translations.telegram.org) offers a **find & replace** option when you search for phrases. It also comes with RegEx support. So instead of depending on offline replacements to the file, use that.
-3. This hack is intended for stringnames language pack, and the like.
+This hack is intended for stringnames language pack, finding critical strings, and similar purposes.
+
+1. Avoid using this trick for actual languages. It is always better to double check when importing a large number of strings. Currently there seems to be a limit of 50 strings when importing phrases.
+2. You _should_ know that [translations.telegram.org](https://translations.telegram.org) offers a **find & replace** option when you search for phrases. It also comes with RegEx support. So instead of depending on offline replacements to the file, use that.
 
 ## Possible solutions
 - **Solution 1:** Hack the edit-selected-phrases button to send automatically 50 strings in a batch, with a delay of 5-10s
@@ -26,6 +27,7 @@ var autouploadkeys = setInterval(function(){
     counter--;
     if(counter === 0) {
         clearInterval(autouploadkeys);
+	console.log("IMPORT COMPLETE!\n If you are doing this for fetching critical strings, please try edit-all or see if any manually selected strings can be imported.")
     }
 }, 8*1000); // 8 secs between uploads
 ```
