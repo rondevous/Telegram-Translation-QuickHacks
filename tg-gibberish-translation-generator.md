@@ -1,3 +1,6 @@
+### **Note:** use https://rondevous.github.io/stringnames/ instead. Random value translation is  available on it (and is a better version of this).
+
+---
 
 # Telegram Gibberish Translation Generator
 ### Generate telegram language files with the random values as the translation
